@@ -1,4 +1,3 @@
-import 'package:expense_tracker/main.dart';
 import 'package:flutter/material.dart';
 import 'package:expense_tracker/widgets/expenses.dart';
 
@@ -12,18 +11,25 @@ class MainMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kDarkColorScheme.background,
+      backgroundColor: const Color.fromARGB(255, 21, 3, 75),
       body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            const SizedBox(
+              height: 240,
+            ),
             Image.asset(
               'assets/Expense.png',
-              width: 300,
-              color: const Color.fromARGB(100, 53, 8, 177),
+              width: 250,
             ),
-            const SizedBox(height: 80),
-            const Text('Track my Expenses! \n With The Expense Tracker!'),
+            const SizedBox(height: 50),
+            const Text('Track my Expenses! \n With The Expense Tracker!',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                )),
             const SizedBox(
               height: 30,
             ),
@@ -31,8 +37,14 @@ class MainMenu extends StatelessWidget {
                 onPressed: () {
                   _startExp(context);
                 },
-                icon: const Icon(Icons.arrow_right_alt),
-                label: const Text('Track my Expense!'))
+                icon: const Icon(
+                  Icons.arrow_right_alt,
+                  color: Colors.amber,
+                ),
+                label: const Text(
+                  'Track my Expense!',
+                  style: TextStyle(color: Colors.amber),
+                ))
           ],
         ),
       ),
